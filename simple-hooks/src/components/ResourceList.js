@@ -13,7 +13,15 @@ const ResourceList = ({ resource }) => {
   useEffect(() => {
     fetchResource(resource);
   }, [resource]);
-  return <div>{resources.length}</div>;
+  return (
+    <div>
+      <ul>
+        {resources.map(record => (
+          <li key={record.title}>{record.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default ResourceList;
